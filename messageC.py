@@ -2,8 +2,17 @@ import streamlit as st
 import gspread
 from google.oauth2.service_account import Credentials
 
+# 設定授權範圍
+SCOPES = [
+    'https://www.googleapis.com/auth/spreadsheets',
+    'https://www.googleapis.com/auth/drive'
+]
+
 # 從 secrets 讀取金鑰資訊
-creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"])
+creds = Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"],
+    scopes=SCOPES
+)
 client = gspread.authorize(creds)
 
 # 接下來你就可以操作 Sheet：
