@@ -22,7 +22,7 @@ SHEET_NAME = '工作表1'
 sheet = client.open_by_key(SPREADSHEET_ID).worksheet(SHEET_NAME)
 
 # 可以用 Streamlit 輸入或寫死測試
-name = st.text_input("輸入想買的東西：")
+name = st.text_input("請輸入想買的東西：")
 if st.button("送出留言"):
     if name:
         sheet.append_row([name])
