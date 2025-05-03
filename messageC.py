@@ -26,6 +26,6 @@ name = st.text_input("輸入想買的東西：")
 if st.button("送出留言"):
     if name:
         sheet.append_row([name])
-        st.success("✅ 已成功送出留言！")
+        st.success("✅ 已成功送出！")
     else:
-        st.warning("請先輸入姓名")
+        st.warning("請先輸入訊息")
